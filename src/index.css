@@ -4,7 +4,7 @@
  * Tailwind CSS v4 - Using new @import syntax
  * Docs: https://tailwindcss.com/docs/installation/using-vite
  */
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import "tailwindcss";
 
 /* Tell Tailwind where to scan for classes */
@@ -17,7 +17,27 @@
  * Add your custom global styles here if needed
  * Prefer using Tailwind utilities in components
  */
-
+@theme {
+  --font-quicksand: Quicksand, sans-serif;
+  --color-base-black: #000000;
+  --color-base-white: #FFFFFF;
+  --color-primary-100: #FFE0D8;
+  --color-primary-200: #FF623E;
+  --color-primary-300: #CC4E32;
+  --color-primary-400: #80311F;
+  --color-neutral-25: #FDFDFD;
+  --color-neutral-50: #FAFAFA;
+  --color-neutral-100: #F5F5F5;
+  --color-neutral-200: #E9EAEB;
+  --color-neutral-300: #D5D7DA;
+  --color-neutral-400: #A4A7AE;
+  --color-neutral-500: #717680;
+  --color-neutral-600: #535862;
+  --color-neutral-700: #414651;
+  --color-neutral-800: #252B37;
+  --color-neutral-900: #181D27;
+  --color-neutral-950: #0A0D12;
+}
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
