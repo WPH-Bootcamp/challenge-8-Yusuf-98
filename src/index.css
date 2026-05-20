@@ -5,7 +5,7 @@
  * Docs: https://tailwindcss.com/docs/installation/using-vite
  */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Tell Tailwind where to scan for classes */
 @source "./**/*.{js,jsx,ts,tsx}";
@@ -17,34 +17,52 @@
  * Add your custom global styles here if needed
  * Prefer using Tailwind utilities in components
  */
+
 @theme {
-  --font-quicksand: Quicksand, sans-serif;
-  --color-base-black: #000000;
-  --color-base-white: #FFFFFF;
-  --color-primary-100: #FFE0D8;
-  --color-primary-200: #FF623E;
-  --color-primary-300: #CC4E32;
-  --color-primary-400: #80311F;
-  --color-neutral-25: #FDFDFD;
-  --color-neutral-50: #FAFAFA;
-  --color-neutral-100: #F5F5F5;
-  --color-neutral-200: #E9EAEB;
-  --color-neutral-300: #D5D7DA;
-  --color-neutral-400: #A4A7AE;
+  --font-quicksand: 'Quicksand', sans-serif;
+
+  /* Primary colors */
+  --color-primary-100: #ffe0d8;
+  --color-primary-200: #ff623e;
+  --color-primary-300: #cc4e32;
+  --color-primary-400: #80311f;
+
+  /* Neutral */
+  --color-neutral-25: #fdfdfd;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e9eaeb;
+  --color-neutral-300: #d5d7da;
+  --color-neutral-400: #a4a7ae;
   --color-neutral-500: #717680;
   --color-neutral-600: #535862;
   --color-neutral-700: #414651;
-  --color-neutral-800: #252B37;
-  --color-neutral-900: #181D27;
-  --color-neutral-950: #0A0D12;
+  --color-neutral-800: #252b37;
+  --color-neutral-900: #181d27;
+  --color-neutral-950: #0a0d12;
 }
-/* Smooth scrolling for anchor links */
+
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dark mode */
+.dark body {
+  background-color: #0a0d12;
+  color: #f5f5f5;
+}
+
 /* Optional: Custom scrollbar styles */
-/* Uncomment if you want custom scrollbar
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -61,4 +79,4 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-*/
+

@@ -12,21 +12,22 @@
  */
 
 import React from 'react';
+import type { ButtonProps } from '../../types';
 
 // Type definition untuk button variants
-type ButtonVariant = 'primary' | 'secondary' | 'outline';
-type ButtonSize = 'sm' | 'md' | 'lg';
+// type ButtonVariant = 'primary' | 'secondary' | 'outline';
+// type ButtonSize = 'sm' | 'md' | 'lg';
 
 // Props interface dengan TypeScript
-interface ButtonProps {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  children: React.ReactNode;
-  onClick?: () => void;
-  className?: string;
-  disabled?: boolean;
-  type?: 'button' | 'submit' | 'reset';
-}
+// interface ButtonProps {
+//   variant?: ButtonVariant;
+//   size?: ButtonSize;
+//   children: React.ReactNode;
+//   onClick?: () => void;
+//   className?: string;
+//   disabled?: boolean;
+//   type?: 'button' | 'submit' | 'reset';
+// }
 
 /**
  * Reusable Button Component
@@ -49,20 +50,31 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
 }) => {
   // Base styles yang selalu applied
-  const baseStyles = 'font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
+  // const baseStyles = 'font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseStyles = 'font-body font-bold tracking-[-0.02em] w-[280px] h-12 gap-1 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 flex items-center justify-center text-base';
 
   // Variant styles - SESUAIKAN dengan design Figma!
+  // const variantStyles = {
+  //   primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
+  //   secondary: 'bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500',
+  //   outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500',
+  // };
   const variantStyles = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
-    secondary: 'bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500',
-    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500',
+    primary: 'bg-primary-200 text-neutral-25 hover:bg-primary-300 shadow-[inset_4px_4px_4px_0px_rgba(255,255,255,0.25)] focus:ring-primary-200',
+    secondary: 'bg-neutral-800 text-neutral-25 hover:bg-neutral-900 focus:ring-neutral-800',
+    outline: 'border-2 border-primary-200 text-primary-200 hover:bg-primary-200 hover:text-neutral-25 focus:ring-primary-200',
   };
 
   // Size styles
+  // const sizeStyles = {
+  //   sm: 'px-4 py-2 text-sm',
+  //   md: 'px-6 py-3 text-base',
+  //   lg: 'px-8 py-4 text-lg',
+  // };
   const sizeStyles = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
+    sm: 'rounded-full',
+    md: 'rounded-full',
+    lg: 'rounded-full',
   };
 
   // Disabled styles
