@@ -35,13 +35,13 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
 //   disabled?: boolean;
 // }
 export interface ButtonProps {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
+  variant: ButtonVariant;
+  size: ButtonSize;
   children: React.ReactNode;
   onClick?: () => void;
   className?: string;
   disabled?: boolean;
-  type?: 'button' | 'submit' | 'reset';
+  type: 'button' | 'submit' | 'reset';
 }
 // ==========================================
 // Section Data Types

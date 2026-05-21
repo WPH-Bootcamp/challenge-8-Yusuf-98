@@ -9,11 +9,13 @@
  * Current: Placeholder untuk testing Tailwind setup
  */
 
+import Button from "./components/ui/Button";
+
 function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-display-3xl font-bold text-gray-900 mb-4 shadow-inner">
           Company Profile Assignment
         </h1>
         <p className="text-lg text-gray-600 mb-6">
@@ -24,6 +26,7 @@ function App() {
           <p>Folder structure ready</p>
           <p>Check README.md for instructions</p>
         </div>
+        <Button type="button" onClick={()=>{alert('aku nih')}} variant="primary" size="sm">klik dong</Button>
       </div>
     </div>
   );
