@@ -43,6 +43,42 @@ export interface ButtonProps {
   disabled?: boolean;
   type: 'button' | 'submit' | 'reset';
 }
+
+/**
+ * Logo types
+ */
+export interface LogoProps {
+  size?: 'large' | 'small';
+  title: string;
+  description?: string;
+  icon?: string;
+  onClick?: () => void;
+  className?: string;
+}
+
+/**
+ * Service Card types
+ */
+export interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: string;
+  onClick?: () => void;
+  className?: string;
+}
+
+/**
+ * Service Card types
+ */
+export interface TestimonialCardProps {
+  icon: string;
+  rating: string;
+  description: string;
+  name: string;
+  role: string;
+  image?: string;
+  className?: string;
+}
 // ==========================================
 // Section Data Types
 // ==========================================
@@ -63,7 +99,6 @@ export interface ButtonProps {
 export interface ServiceItem {
   id: number;
   title: string;
-  description: string;
   icon?: string;
   image?: string;
 }

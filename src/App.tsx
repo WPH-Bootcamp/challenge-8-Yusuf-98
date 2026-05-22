@@ -9,25 +9,33 @@
  * Current: Placeholder untuk testing Tailwind setup
  */
 
-import Button from "./components/ui/Button";
+import Button from './components/ui/Button';
+import Logo from './components/ui/Logo';
+import CardService from './components/ui/CardService';
+import webDevIcon from './assets/icons/Web-Development.png'
+import TestimonialCard from './components/ui/TestimonialCard';
+import QuoteSign from './assets/icons/tdesign_quote-filled.png'
+import RatingStar from './assets/icons/star-icon.png'
+import SarahTanImage from './assets/icons/Ellipse 1.png'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-display-3xl font-bold text-gray-900 mb-4 shadow-inner">
-          Company Profile Assignment
-        </h1>
-        <p className="text-lg text-gray-600 mb-6">
-          Start building your components!
-        </p>
-        <div className="space-y-2 text-sm text-gray-500">
-          <p>TailwindCSS configured</p>
-          <p>Folder structure ready</p>
-          <p>Check README.md for instructions</p>
-        </div>
-        <Button type="button" onClick={()=>{alert('aku nih')}} variant="primary" size="sm">klik dong</Button>
-      </div>
+    <div className='min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-5'>
+      <Logo size='large' title='Your Logo'/>
+      <Logo size='small' title='Your Logo'/>
+      <CardService title='Web Development' description='Build fast, scalable, and SEO-friendly websites.' icon={webDevIcon}/>
+      <Button
+          type='button'
+          onClick={() => {
+            alert('aku nih');
+          }}
+          variant='primary'
+          size='md'
+          className='w-50'          
+        >
+          Let's Talk
+        </Button>
+        <TestimonialCard icon={QuoteSign} rating={RatingStar} description='"The team delivered exactly what we needed — on time and with outstanding quality. Their attention to detail and communication were top-notch."' name='Sarah Tan' role='Product Manager at Finovate' image={SarahTanImage}/>
     </div>
   );
 }

@@ -6,6 +6,7 @@
  */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import 'tailwindcss';
+@custom-variant hover (&:hover);
 
 @source "./**/*.{js,ts,jsx,tsx}";
 @source "../index.html";
@@ -19,6 +20,7 @@
 @theme {
   /* Primary colors */
   --color-primary-100: #ffe0d8;
+  --color-primary-150: #ff8e74;
   --color-primary-200: #ff623e;
   --color-primary-300: #cc4e32;
   --color-primary-400: #80311f;
@@ -38,33 +40,33 @@
   --color-neutral-950: #0a0d12;
 
   /* Font */
-  --font-size-xs: 0.75rem;
-  --font-size-xs--line-height: 1.5rem;
-  --font-size-sm: 0.875rem;
-  --font-size-sm--line-height: 1.75rem;
-  --font-size-md: 1rem;
-  --font-size-md--line-height: 1.875rem;
-  --font-size-lg: 1.125rem;
-  --font-size-lg--line-height: 2rem;
-  --font-size-xl: 1.25rem;
-  --font-size-xl--line-height: 2.125rem;
-  --font-size-display-xs: 1.5rem;
-  --font-size-display-xs--line-height: 2.25rem;
-  --font-size-display-sm: 1.75rem;
-  --font-size-display-sm--line-height: 2.375rem;
-  --font-size-display-md: 2rem;
-  --font-size-display-md--line-height: 2.5rem;
-  --font-size-display-lg: 2.25rem;
-  --font-size-display-lg--line-height: 2.275rem;
-  --font-size-display-lg--letter-spacing: -0.02em;
-  --font-size-display-xl: 2.5rem;
-  --font-size-display-xl--line-height: 3rem;
-  --font-size-display-xl--letter-spacing: -0.02em;
-  --font-size-display-2xl: 3rem;
-  --font-size-display-2xl--line-height: 3.75rem;
-  --font-size-display-2xl--letter-spacing: -0.02em;
-  --font-size-display-3xl: 3.75rem;
-  --font-size-display-3xl--line-height: 4.5rem;
+  --text-size-xs: 0.75rem;
+  --text-size-xs--line-height: 1.5rem;
+  --text-size-sm: 0.875rem;
+  --text-size-sm--line-height: 1.75rem;
+  --text-size-md: 1rem;
+  --text-size-md--line-height: 1.875rem;
+  --text-size-lg: 1.125rem;
+  --text-size-lg--line-height: 2rem;
+  --text-size-xl: 1.25rem;
+  --text-size-xl--line-height: 2.125rem;
+  --text-size-display-xs: 1.5rem;
+  --text-size-display-xs--line-height: 2.25rem;
+  --text-size-display-sm: 1.75rem;
+  --text-size-display-sm--line-height: 2.375rem;
+  --text-size-display-md: 2rem;
+  --text-size-display-md--line-height: 2.5rem;
+  --text-size-display-lg: 2.25rem;
+  --text-size-display-lg--line-height: 2.275rem;
+  --text-size-display-lg--letter-spacing: -0.02em;
+  --text-size-display-xl: 2.5rem;
+  --text-size-display-xl--line-height: 3rem;
+  --text-size-display-xl--letter-spacing: -0.02em;
+  --text-size-display-2xl: 10rem;
+  --text-size-display-2xl--line-height: 3.75rem;
+  --text-size-display-2xl--letter-spacing: -0.02em;
+  --text-size-display-3xl: 3.75rem;
+  --text-size-display-3xl--line-height: 4.5rem;
 
   /* Border-radius */
   --radius-none: 0rem;
@@ -99,7 +101,7 @@
   --spacing-11xl: 8.75rem;
 
   /* Shadow */
-  --shadow-inner: inset 4px 4px 4px 0px rgba(255, 255, 255, 1);
+  --shadow-inner: inset 4px 4px 4px 0px rgba(255, 255, 255, 0.25);
 }
 
 /* Global Styles */
