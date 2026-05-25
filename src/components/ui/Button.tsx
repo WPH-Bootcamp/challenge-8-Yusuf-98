@@ -2,7 +2,7 @@
  * Button Component
  */
 import React from 'react';
-import type { ButtonProps, ButtonSize, ButtonVariant } from '../../types';
+import type { ButtonProps, ButtonSize } from '../../types';
 
 /**
  * Reusable Button Component
@@ -16,7 +16,6 @@ import type { ButtonProps, ButtonSize, ButtonVariant } from '../../types';
  * @param type - Button type attribute
  */
 const Button: React.FC<ButtonProps> = ({
-  variant,
   size,
   children,
   onClick,
@@ -25,29 +24,17 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
 }) => {
   const baseStyles =
-    'flex items-center justify-center font-bold rounded-full shadow-inner transition-all duration-200 cursor-pointer';
-
-  const variantStyles: Record<ButtonVariant, string> = {
-    primary:
-      `bg-primary-200 text-white hover:text-neutral-800 hover:shadow-inner hover:scale-102 active:translate-y-0 active:shadow-inner active:bg-primary-300 transition-all duration-300 ease-in-out
-  `,
-    secondary:
-      'bg-primary-200 h-11 text-white hover:bg-primary-200 hover:shadow-inner focus:ring-primary-300 active:bg-primary-300',
-    outline:
-      'border-2 border-primary-200 text-primary-200 hover:bg-primary-300 hover:text-white',
-  };
+    'flex items-center justify-center p-2 gap-1 font-semibold rounded-full shadow-inner bg-primary-200 text-white hover:text-neutral-800 hover:scale-102 focus:outline-none focus:ring focus:ring-offset-2 active:shadow-inner active:bg-primary-300 transition-all duration-300 ease-in-out cursor-pointer';
 
   const sizeStyles: Record<ButtonSize, string> = {
-    sm: 'p-2 gap-1 text-size-sm',
-    md: 'p-2 gap-1 text-size-md',
-    lg: 'p-4 gap-2 text-lg gap-2',
+    sm: 'h-11 text-size-sm',
+    md: 'h-12 text-size-md -tracking-2',
   };
 
   const disabledStyles = 'opacity-50 cursor-not-allowed';
 
   const buttonClasses = `
     ${baseStyles}
-    ${variantStyles[variant]}
     ${sizeStyles[size]}
     ${disabled? disabledStyles : ''} 
     ${className}`.trim();

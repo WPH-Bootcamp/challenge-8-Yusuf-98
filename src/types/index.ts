@@ -17,11 +17,18 @@ import React from 'react';
 // ==========================================
 
 /**
+ * Hero Props
+ */
+export interface HeroProps {
+  title: string;
+  titleSpan: string;
+  description: string;
+  className?: string;
+}
+/**
  * Button variant types
  * Gunakan ini untuk Button component
  */
-export type ButtonVariant = 'primary' | 'secondary' | 'outline';
-export type ButtonSize = 'sm' | 'md' | 'lg';
 
 /**
  * Example: Button Props
@@ -34,8 +41,10 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
 //   className?: string;
 //   disabled?: boolean;
 // }
+
+export type ButtonSize = 'sm' | 'md';
+
 export interface ButtonProps {
-  variant: ButtonVariant;
   size: ButtonSize;
   children: React.ReactNode;
   onClick?: () => void;
@@ -48,10 +57,9 @@ export interface ButtonProps {
  * Logo types
  */
 export interface LogoProps {
-  size?: 'large' | 'small';
   title: string;
   description?: string;
-  icon?: string;
+  logo?: string;
   onClick?: () => void;
   className?: string;
 }
@@ -60,25 +68,52 @@ export interface LogoProps {
  * Service Card types
  */
 export interface ServiceCardProps {
+  id: number;
   title: string;
   description: string;
   icon: string;
-  onClick?: () => void;
-  className?: string;
+}
+
+export interface ServiceCardData {
+  title: string;
+  description: string;
+  list: ServiceCardProps[];
 }
 
 /**
- * Service Card types
+ * Testimonial Card types
  */
-export interface TestimonialCardProps {
-  icon: string;
-  rating: string;
-  description: string;
+export interface Testimonial {
+  id: number;
   name: string;
-  role: string;
-  image?: string;
-  className?: string;
+  position: string;
+  company: string;
+  message: string;
+  avatar?: string;
+  rating: number;
 }
+
+export interface TestimonialData {
+  title: string;
+  description: string;
+  list: Testimonial[];
+}
+
+/**
+ * Stat Item
+ */
+export interface Stat {
+  id: number;
+  value: string;
+  label: string;
+}
+
+export interface StatData {
+  title: string;
+  description: string;
+  list: Stat[];
+}
+
 // ==========================================
 // Section Data Types
 // ==========================================
@@ -96,96 +131,41 @@ export interface TestimonialCardProps {
 /**
  * Example: Service/Product Item
  */
-export interface ServiceItem {
-  id: number;
-  title: string;
-  icon?: string;
-  image?: string;
-}
 /**
  * Example: Team Member
  */
-export interface TeamMember {
-  id: number;
-  name: string;
-  position: string;
-  bio?: string;
-  image: string;
-  socialLinks?: {
-    linkedin?: string;
-    twitter?: string;
-    github?: string;
-  };
-}
-
-/**
- * Example: Testimonial
- */
-export interface Testimonial {
-  id: number;
-  name: string;
-  position: string;
-  company: string;
-  message: string;
-  avatar?: string;
-  rating?: number;
-}
+// export interface TeamMember {
+//   id: number;
+//   name: string;
+//   position: string;
+//   bio?: string;
+//   image: string;
+//   socialLinks?: {
+//     linkedin?: string;
+//     twitter?: string;
+//     github?: string;
+//   };
+// }
 
 /**
  * Process Step
  * Digunakan di ProcessSection
  */
-export interface ProcessStep {
-  id: number;
-  number: string;
-  title: string;
-  description?: string;
-}
-
-/**
- * Stat Item
- * Digunakan di AboutSection
- */
-export interface StatItem {
-  id: number;
-  value: string;
-  label: string;
-}
 
 /**
  * Industry Item
  * Digunakan di IndustrySection
  */
-export interface IndustryItem {
-  id: string;
-  label: string;
-  title: string;
-  description: string;
-  image?: string;
-}
 
 /**
  * Portfolio / Project Item
  * Digunakan di PortfolioSection
  */
-export interface PortfolioItem {
-  id: number;
-  category: string;
-  title: string;
-  image?: string;
-  link?: string;
-}
 
 /**
  * FAQ Item
  * Digunakan di FAQSection
  */
-export interface FAQItem {
-  id: number;
-  question: string;
-  answer: string;
-}
-
 // ==========================================
 // Navigation Types
 // ==========================================
@@ -199,6 +179,21 @@ export interface NavItem {
   external?: boolean;
 }
 
+/**
+ * Partner List
+ */
+export interface PartnerItem {
+  id: number;
+  label: string;
+  logo: string;
+}
+
+export interface Partners {
+  title: string;
+  partners: PartnerItem[];
+  className?: '';
+}
+
 // ==========================================
 // Form Types (if needed)
 // ==========================================
@@ -206,12 +201,6 @@ export interface NavItem {
 /**
  * Contact form data
  */
-export interface ContactFormData {
-  name: string;
-  email: string;
-  message: string;
-  services: string[];
-}
 
 // ==========================================
 // Theme Types
@@ -222,6 +211,17 @@ export type Theme = 'light' | 'dark';
 // ==========================================
 // TODO: Add more types as needed!
 // ==========================================
+
+/**
+ * Pagination Type
+ */
+
+export interface PaginationProps {
+  total: number;
+  activeIndex: number;
+  onClick: (index: number) => void;
+  className: string;
+}
 
 /**
  * Tips:

@@ -1,28 +1,70 @@
-import type { TestimonialCardProps } from "../../types";
+import type { Testimonial } from '../../types';
+import QuoteIcon from '../../assets/icons/quote-icon.png';
+import StarIcon from '../../assets/icons/star-icon.png';
 
-const TestimonialCard = ({icon,rating,description,name,role,image,className=''}:TestimonialCardProps) => {
+const TestimonialCard = ({
+  name,
+  position,
+  company,
+  message,
+  avatar,
+  rating,
+}: Testimonial) => {
+  const stars = Array.from({ length: rating ?? 0 });
 
   return (
-    <div className={'flex flex-col justify-center items-center rounded-2xl border bg-neutral-950 border-neutral-900 pt-4 pb-12 px-4 gap-4 lg:pt-6 lg:px-6 lg:gap-6 relative transition-all duration-200 hover:border-primary-200'}>
-      <img src={icon} alt="Quote sign" className="w-16 h-16 lg:w-20 lg:h-20 object-contain absolute -top-6 left-4 lg:-top-7.5"/>
-      <div className="flex flex-col items-center justify-center">
-        <div className="flex flex-col items-center justify-center gap-3">
-          <div className="flex gap-1">
-            <img src={rating} alt="Rating Star" />
-            <img src={rating} alt="Rating Star" />
-            <img src={rating} alt="Rating Star" />
-            <img src={rating} alt="Rating Star" />
-            <img src={rating} alt="Rating Star" />
+    <div className='relative w-[594px] my-9.5 group rounded-2xl'>
+      {/* Border Animasinya */}
+      <div
+        className='absolute -inset-[1px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin-border'
+        style={{
+          background:
+            'conic-gradient(from var(--angle), #ff6c37, #000000 50%, #ff6c37)',
+        }}
+      />
+
+      {/* Konten Utama */}
+      <div className='relative rounded-2xl bg-neutral-25 dark:bg-neutral-950 flex justify-center border-[0.5px] border-neutral-900 group-hover:border-transparent'>
+        <img
+          src={QuoteIcon}
+          alt='Quote sign'
+          className='w-16 h-16 lg:w-20 lg:h-20 object-contain absolute -top-8.5 left-12.5 lg:-top-11 z-20'
+        />
+
+        <div className='flex flex-col items-center justify-center pt-10 pb-16 px-6 gap-4 lg:pt-12 lg:px-8 lg:gap-6'>
+          <div className='flex flex-col items-center justify-center gap-3'>
+            <div className='flex gap-1'>
+              {stars.map((_, index) => (
+                <img
+                  key={index}
+                  src={StarIcon}
+                  alt='Rating Star'
+                  className='w-6 h-6'
+                />
+              ))}
+            </div>
+            <p className='font-semibold text-size-sm text-center text-neutral-950 dark:text-neutral-25 lg:text-size-lg'>
+              {message}
+            </p>
           </div>
-          <p className="font-semibold text-size-sm text-center text-neutral-25 lg:text-size-lg">{description}</p>
+          <div>
+            <p className='font-semibold text-size-sm text-center text-neutral-950 dark:text-neutral-25 lg:text-size-lg'>
+              {name}
+            </p>
+            <p className='font-semibold text-size-sm text-center text-primary-200 lg:text-size-lg'>
+              {position} at {company}
+            </p>
+          </div>
         </div>
-        <p className="font-semibold text-size-sm text-center text-neutral-25 lg:text-size-lg">{name}</p>
-        <p className="font-semibold text-size-sm text-center text-primary-200 lg:text-size-lg">{role}</p>
+
+        <img
+          src={avatar || '/default-avatar.png'}
+          alt={name}
+          className='w-15 h-15 rounded-full lg:w-19 lg:h-19 object-contain absolute -bottom-6 lg:-bottom-7.5 z-20'
+        />
       </div>
-      <img src={image} alt={name} className="w-15 h-15 lg:w-19 lg:h-19 object-contain absolute top-45 lg:top-50" />
     </div>
+  );
+};
 
-  )
-}
-
-export default TestimonialCard
+export default TestimonialCard;

@@ -1,38 +1,48 @@
-import React from 'react';
-import logoSymbolLarge from '../../assets/icons/logo-large.png';
-import logoSymbolSmall from '../../assets/icons/logo-small.png';
+import logoIconLarge from '../../assets/icons/logo-large.png';
+import logoIconSmall from '../../assets/icons/logo-small.png';
 import type { LogoProps } from '../../types';
 
-const LogoIcon = ({size = 'large', icon}: {size: 'large' | 'small'; icon?: string}) => {
-  const src = icon ?? (size === 'large' ? logoSymbolLarge : logoSymbolSmall);
+const LogoIcon = () => {
 
   return (
-    <img
-      src={src}
-      alt=""
-      aria-hidden="true"
-      className={`block object-contain ${size === 'small' ? 'w-6.575 h-7.2125' : 'w-7.3975 h-8.115'}`}
-    />
-  )
-}
+    <picture>
+      {/* Jika layar md ke atas (>= 768px), gunakan logoIconLarge */}
+      <source media="(min-width: 768px)" srcSet={logoIconLarge} />
+      
+      {/* Gambar default untuk layar mobile */}
+      <img
+        src={logoIconSmall}
+        alt="Logo image"
+        aria-hidden="true"
+        className="block object-contain"
+      />
+    </picture>
+  );
+};
 
-const Logo = ({ size = 'large', title, description, icon, onClick = () => window.scrollTo({ top: 0, behavior: 'smooth' }), className = '' }: LogoProps) => {
-  const isSmall = size === 'small';
+const Logo = ({
+  title,
+  description,
+  onClick = () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+  className = '',
+}: LogoProps) => {
 
   return (
     <div
-      role='image'
+      role='img'
       aria-label={description ?? title}
-      className={`inline-flex items-center select-none bg-black ${isSmall ? 'gap-2 py-0.5' : 'gap-2.5 py-0.5'} ${className}`}
+      className={`inline-flex items-center w-35.25 h-8 gap-2 md:w-40 md:h-9 md:gap-2.5'} ${className}`}
     >
-      <LogoIcon size={size} icon={icon}/>
+      <LogoIcon />
       <a
-        href="#"
+        href='#'
         onClick={onClick}
-        className={`font-bold tracking-wide leading-none whitespace-nowrap no-underline text-white ${isSmall ? 'text-size-xl' : 'text-size-display-xs'}`}
-      >{title}</a>
+        className={'font-bold no-underline text-black dark:text-white text-size-xl md:text-size-display-xs'}
+      >
+        {title}
+      </a>
     </div>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

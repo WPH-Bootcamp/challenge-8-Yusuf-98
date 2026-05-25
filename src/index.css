@@ -1,26 +1,23 @@
-/**
- * Main CSS File
- *
- * Tailwind CSS v4 - Using new @import syntax
- * Docs: https://tailwindcss.com/docs/installation/using-vite
- */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import 'tailwindcss';
+
 @custom-variant hover (&:hover);
+@variant dark (&:where(.dark, .dark *));
 
 @source "./**/*.{js,ts,jsx,tsx}";
 @source "../index.html";
+
 /**
  * Custom Global Styles
- *
- * Add your custom global styles here if needed
- * Prefer using Tailwind utilities in components
  */
 
 @theme {
+  /* Base Colors */
+  --color-base-white: #ffffff;
+  --color-base-black: #000000;
+
   /* Primary colors */
   --color-primary-100: #ffe0d8;
-  --color-primary-150: #ff8e74;
+  --color-primary-150: #ff6c37;
   --color-primary-200: #ff623e;
   --color-primary-300: #cc4e32;
   --color-primary-400: #80311f;
@@ -30,6 +27,7 @@
   --color-neutral-50: #fafafa;
   --color-neutral-100: #f5f5f5;
   --color-neutral-200: #e9eaeb;
+  --color-neutral-250: #dedcdc;
   --color-neutral-300: #d5d7da;
   --color-neutral-400: #a4a7ae;
   --color-neutral-500: #717680;
@@ -62,11 +60,17 @@
   --text-size-display-xl: 2.5rem;
   --text-size-display-xl--line-height: 3rem;
   --text-size-display-xl--letter-spacing: -0.02em;
-  --text-size-display-2xl: 10rem;
+  --text-size-display-2xl: 3rem;
   --text-size-display-2xl--line-height: 3.75rem;
   --text-size-display-2xl--letter-spacing: -0.02em;
   --text-size-display-3xl: 3.75rem;
   --text-size-display-3xl--line-height: 4.5rem;
+  --text-size-display-hero: 3.5rem;
+  --text-size-display-hero--line-height: 4.25rem;
+  --text-size-display-hero--letter-spacing: -0.02em;
+
+  /* Letter Spacing */
+  --tracking-1: 0.02em;
 
   /* Border-radius */
   --radius-none: 0rem;
@@ -100,8 +104,31 @@
   --spacing-10xl: 8rem;
   --spacing-11xl: 8.75rem;
 
+  --spacing-nav-padding: clamp(1rem, 5vw, 10rem);
+  --text-nav-fluid: clamp(0.875rem, 1vw, 1rem);
+
   /* Shadow */
   --shadow-inner: inset 4px 4px 4px 0px rgba(255, 255, 255, 0.25);
+
+  /* Gradient Border */
+  --bg-gradient-border: linear-gradient(
+    135deg,
+    #ff6c37_0%,
+    #ff6c37_25%,
+    #dedcdc_25%,
+    #dedcdc_100%
+  );
+
+  --animate-marquee: marquee 25s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 /* Global Styles */
@@ -119,20 +146,22 @@ body {
 
 /* Dark mode */
 .dark body {
-  background-color: var(--color-neutral-950);
-  color: var(--color-neutral-100);
+  background-color: var(--color-base-black);
+  color: var(--color-base-white);
 }
 
-/* Optional: Custom scrollbar styles */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #252b37;
+}
+::-webkit-scrollbar-thumb {
+  background: #575351;
+  border-radius: 5px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

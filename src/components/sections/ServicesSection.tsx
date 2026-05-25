@@ -1,0 +1,26 @@
+import ServiceCard from '../ui/ServiceCard';
+import { services } from '../../data/services';
+
+function ServicesSection() {
+  return (
+    <div className='flex flex-col py-10 px-4 gap-10 lg:py-20 lg:px-11xl lg:gap-16'>
+      <div className='flex flex-col gap-3.5'>
+        <h1 className='font-bold text-size-display-xl text-center text-neutral-25'>
+          {services.title}
+        </h1>
+        <p className='font-medium text-size-lg text-center text-neutral-400'>
+          {services.description}
+        </p>
+      </div>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+        {services.list.map((service) => (
+          <div key={service.id}>
+            <ServiceCard {...service} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default ServicesSection;
