@@ -27,7 +27,7 @@ const TestimonialCard = ({
       <div className='relative rounded-2xl bg-neutral-25 dark:bg-neutral-950 flex justify-center border-[0.5px] border-neutral-900 group-hover:border-transparent'>
         <img
           src={QuoteIcon}
-          alt='Quote sign'
+          alt='Quote Icon'
           className='w-16 h-16 lg:w-20 lg:h-20 object-contain absolute -top-8.5 left-12.5 lg:-top-11 z-20'
         />
 

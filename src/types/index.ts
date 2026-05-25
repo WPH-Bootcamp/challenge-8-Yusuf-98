@@ -23,7 +23,7 @@ export interface HeroProps {
   title: string;
   titleSpan: string;
   description: string;
-  className?: string;
+  image?: string;
 }
 /**
  * Button variant types
@@ -102,7 +102,7 @@ export interface TestimonialData {
 /**
  * Stat Item
  */
-export interface Stat {
+export interface StatProps {
   id: number;
   value: string;
   label: string;
@@ -111,7 +111,7 @@ export interface Stat {
 export interface StatData {
   title: string;
   description: string;
-  list: Stat[];
+  list: StatProps[];
 }
 
 // ==========================================
@@ -208,6 +208,10 @@ export interface Partners {
 
 export type Theme = 'light' | 'dark';
 
+export interface ThemeContextType {
+  theme: Theme;
+  toggleTheme: () => void;
+}
 // ==========================================
 // TODO: Add more types as needed!
 // ==========================================
