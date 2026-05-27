@@ -61,7 +61,6 @@ export interface LogoProps {
   description?: string;
   logo?: string;
   onClick?: () => void;
-  className?: string;
 }
 
 /**
@@ -152,10 +151,41 @@ export interface StatData {
  * Digunakan di ProcessSection
  */
 
+export interface ProcessHeader {
+  title: string;
+  description: string;
+}
+
+export interface ProcessStep {
+  id: number;
+  title: string;
+  subtitle: string;
+  side: 'left' | 'right';
+}
+
+export interface StepCardProps {
+  step: ProcessStep;
+  active: boolean;
+  isMobile: boolean;
+}
 /**
  * Industry Item
  * Digunakan di IndustrySection
  */
+
+export interface IndustryProps {
+  id: number;
+  label?: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+}
+
+export interface IndustryData {
+  title: string;
+  description: string;
+  industries: IndustryProps[];
+}
 
 /**
  * Portfolio / Project Item

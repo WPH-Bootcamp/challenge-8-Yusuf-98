@@ -24,11 +24,11 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
 }) => {
   const baseStyles =
-    'flex items-center justify-center p-2 gap-1 font-semibold rounded-full shadow-inner bg-primary-200 text-white hover:text-neutral-800 hover:scale-102 focus:outline-none focus:ring focus:ring-offset-2 active:shadow-inner active:bg-primary-300 transition-all duration-300 ease-in-out cursor-pointer';
+    'flex items-center justify-center p-2 gap-1 font-medium rounded-full shadow-inner bg-primary-200 text-white hover:text-neutral-800 hover:scale-102 focus:outline-none focus:ring focus:ring-offset-2 active:shadow-inner active:bg-primary-300 transition-all duration-300 ease-in-out cursor-pointer';
 
   const sizeStyles: Record<ButtonSize, string> = {
     sm: 'h-11 text-size-sm',
-    md: 'h-12 text-size-md -tracking-2',
+    md: 'h-11 text-size-sm tracking-1',
   };
 
   const disabledStyles = 'opacity-50 cursor-not-allowed';
@@ -36,7 +36,7 @@ const Button: React.FC<ButtonProps> = ({
   const buttonClasses = `
     ${baseStyles}
     ${sizeStyles[size]}
-    ${disabled? disabledStyles : ''} 
+    ${disabled ? disabledStyles : ''} 
     ${className}`.trim();
 
   return (

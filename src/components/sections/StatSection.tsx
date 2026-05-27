@@ -3,16 +3,16 @@ import StatCard from '../ui/StatCard';
 
 function StatSection() {
   return (
-    <div className='flex flex-col py-20 px-4 gap-6 lg:py-20 lg:px-11xl lg:gap-16'>
+    <div className='flex flex-col py-20 px-4 gap-6 lg:px-11xl md:gap-12 lg:gap-16'>
       <div className='flex flex-col gap-3.5'>
-        <h1 className='font-bold text-size-display-xl text-center dark:text-neutral-25'>
+        <h1 className='font-bold text-size-display-sm lg:text-size-display-xl text-center dark:text-neutral-25'>
           {statList.title}
         </h1>
-        <p className='font-medium text-size-lg text-center text-neutral-400'>
+        <p className='font-medium text-size-sm lg:text-size-lg text-center text-neutral-400'>
           {statList.description}
         </p>
       </div>
-      <div className='flex gap-4 md:gap-5 justify-center'>
+      <div className='flex flex-wrap gap-4 md:gap-5 justify-center'>
         {statList.list.map((stat) => (
           <div>
             <StatCard {...stat} />

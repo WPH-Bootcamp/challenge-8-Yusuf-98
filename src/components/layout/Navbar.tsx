@@ -36,22 +36,24 @@ const Navbar = () => {
           : 'bg-transparent border-transparent'
       }`}
     >
-      <div className='flex h-21 items-center justify-between px-4 py-6 md:px-40'>
+      <div className='flex h-21 items-center justify-between px-4 py-6 md:px-16 lg:px-11xl'>
         <Logo title='Your Logo' />
 
-        <div className='hidden lg:flex items-center gap-8'>
+        <div className='hidden md:flex items-center justify-between md:gap-3'>
           {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(item.href);
-              }}
-              className={`text-sm font-medium hover:text-primary-200 ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}
-            >
-              {item.label}
-            </a>
+            <div className='md:py-1 md:px4 lg:py-2 lg:px-4 rounded-full'>
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(item.href);
+                }}
+                className='md:text-size-sm lg:text-size-md font-semibold hover:text-primary-200 dark:text-neutral-25'
+              >
+                {item.label}
+              </a>
+            </div>
           ))}
         </div>
 
@@ -60,22 +62,22 @@ const Navbar = () => {
             <img
               src={isDark ? lightIcon : darkIcon}
               alt='Toggle Theme'
-              className={`w-5 h-5 ${isDark ? 'invert' : ''}`}
+              className={`inline-flex min-w-5 h-5 ${isDark ? 'invert' : ''}`}
             />
           </button>
-          <div className='hidden lg:block'>
+          <div className='hidden md:block'>
             <Button
               type='button'
               size='md'
               onClick={() => handleNavClick('#contact')}
-              className='w-50'
+              className='md:w-40 lg:w-50'
             >
               Let's Talk
             </Button>
           </div>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className='lg:hidden p-2'
+            className='md:hidden p-2'
           >
             <img
               src={isMenuOpen ? closeIcon : hamburgerIcon}

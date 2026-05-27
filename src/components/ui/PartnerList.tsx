@@ -2,8 +2,8 @@ import { partnerList } from '../../data/partnerList';
 
 function PartnerList() {
   return (
-    <div className='flex flex-col items-center justify-center overflow-hidden'>
-      <h1 className='font-bold text-size-display-xs dark:text-neutral-25 mb-6'>
+    <div className='flex flex-col items-center justify-center overflow-hidden mb-3'>
+      <h1 className='font-bold text-center text-size-md -tracking-1 text-size-display-xs dark:text-neutral-25 mb-6'>
         {partnerList.title}
       </h1>
 

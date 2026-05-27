@@ -3,12 +3,12 @@ import { services } from '../../data/services';
 
 function ServicesSection() {
   return (
-    <div className='flex flex-col py-10 px-4 gap-10 lg:py-20 lg:px-11xl lg:gap-16'>
+    <div className='flex flex-col py-10 px-4 gap-10 md:py-15 md:px-10 md:gap-14 lg:py-20 lg:px-11xl lg:gap-16'>
       <div className='flex flex-col gap-3.5'>
-        <h1 className='font-bold text-size-display-xl text-center dark:text-neutral-25'>
+        <h1 className='font-semibold text-size-display-sm md:text-size-display-xl text-center dark:text-neutral-25'>
           {services.title}
         </h1>
-        <p className='font-medium text-size-lg text-center text-neutral-400'>
+        <p className='font-medium text-size-sm md:text-size-lg text-center text-neutral-400'>
           {services.description}
         </p>
       </div>
