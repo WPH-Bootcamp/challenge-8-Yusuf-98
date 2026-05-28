@@ -7,6 +7,9 @@ import ProcessTimeline from './components/sections/ProcessSection';
 import ServicesSection from './components/sections/ServicesSection';
 import HeroSection from './components/sections/HeroSection';
 import IndustrySection from './components/sections/IndustrySection';
+import PortfolioSection from './components/sections/PortfolioSection';
+import FAQSection from './components/sections/FAQSection';
+import ConsultationCard from './components/ui/ConsultationCard';
 
 function App() {
   return (
@@ -18,7 +21,9 @@ function App() {
       <ProcessTimeline />
       <ServicesSection />
       <IndustrySection />
+      <PortfolioSection />
       <TestimonialsSection />
+      <FAQSection />
     </ThemeProvider>
   );
 }

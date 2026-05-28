@@ -28,14 +28,14 @@ const Logo = ({
     <div
       role='img'
       aria-label={description ?? title}
-      className='inline-flex items-center min-w-35.25 md:min-w-40 h-8 gap-2 md:h-9 md:gap-2.5'
+      className=' inline-flex items-center min-w-35.25 md:min-w-40 h-8 gap-2 md:h-9 md:gap-2.5'
     >
       <LogoIcon />
       <a
         href='#'
         onClick={onClick}
         className={
-          'font-semibold space-x-6 no-underline text-black dark:text-white text-size-xl md:text-size-display-xs -tracking-1'
+          'font-logo font-semibold no-underline text-black dark:text-white text-size-xl md:text-size-display-xs'
         }
       >
         {title}

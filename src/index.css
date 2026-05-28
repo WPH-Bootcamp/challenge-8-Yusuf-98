@@ -11,6 +11,9 @@
  */
 
 @theme {
+  /* Font-Logo */
+  --font-logo: 'Outfit', sans-serif;
+
   /* Base Colors */
   --color-base-white: #ffffff;
   --color-base-black: #000000;
@@ -55,10 +58,10 @@
   --text-size-display-md: 2rem;
   --text-size-display-md--line-height: 2.5rem;
   --text-size-display-lg: 2.25rem;
-  --text-size-display-lg--line-height: 2.275rem;
+  --text-size-display-lg--line-height: 2.75rem;
   --text-size-display-lg--letter-spacing: -0.02em;
   --text-size-display-xl: 2.5rem;
-  --text-size-display-xl--line-height: 3rem;
+  --text-size-display-xl--line-height: 3.5rem;
   --text-size-display-xl--letter-spacing: -0.02em;
   --text-size-display-2xl: 3rem;
   --text-size-display-2xl--line-height: 3.75rem;
@@ -108,7 +111,7 @@
   --text-nav-fluid: clamp(0.875rem, 1vw, 1rem);
 
   /* Shadow */
-  --shadow-inner: inset 4px 4px 4px 0px rgba(255, 255, 255, 0.25);
+  --shadow-inner: inset 4px 4px 4px rgba(255, 255, 255, 0.25);
 
   /* Gradient Border */
   --bg-gradient-border: linear-gradient(

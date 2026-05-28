@@ -36,12 +36,12 @@ const Navbar = () => {
           : 'bg-transparent border-transparent'
       }`}
     >
-      <div className='flex h-21 items-center justify-between px-4 py-6 md:px-16 lg:px-11xl'>
+      <div className='flex h-21 items-center justify-between px-4 py-6 md:px-16 lg:px-[clamp(65px,calc(18vw-119px),140px)]'>
         <Logo title='Your Logo' />
 
         <div className='hidden md:flex items-center justify-between md:gap-3'>
           {navItems.map((item) => (
-            <div className='md:py-1 md:px4 lg:py-2 lg:px-4 rounded-full'>
+            <div className='md:py-1 md:px4 lg:py-2 lg:px-[clamp(8px,calc(1.923vw-11.69px),16px)] rounded-full'>
               <a
                 key={item.label}
                 href={item.href}
@@ -61,16 +61,17 @@ const Navbar = () => {
           <button onClick={toggleTheme} className='p-2 rounded-full'>
             <img
               src={isDark ? lightIcon : darkIcon}
-              alt='Toggle Theme'
+              alt='Toggle Theme Icon'
               className={`inline-flex min-w-5 h-5 ${isDark ? 'invert' : ''}`}
             />
           </button>
           <div className='hidden md:block'>
             <Button
               type='button'
-              size='md'
+              size='sm'
+              background='orange'
               onClick={() => handleNavClick('#contact')}
-              className='md:w-40 lg:w-50'
+              className='md:w-[clamp(123.3px,calc(29.016vw-99.83px),197px)] lg:w-[clamp(123.3px,calc(17.716vw-58.11px),197px)]'
             >
               Let's Talk
             </Button>

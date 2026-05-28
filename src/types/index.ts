@@ -43,9 +43,11 @@ export interface HeroProps {
 // }
 
 export type ButtonSize = 'sm' | 'md';
+export type ButtonBg = 'orange' | 'white';
 
 export interface ButtonProps {
   size: ButtonSize;
+  background: ButtonBg;
   children: React.ReactNode;
   onClick?: () => void;
   className?: string;
@@ -111,6 +113,44 @@ export interface StatData {
   title: string;
   description: string;
   list: StatProps[];
+}
+
+export interface PortfolioProps {
+  id: number;
+  category: string;
+  label: string;
+  image: string;
+  alt: string;
+}
+
+export interface PortfolioData {
+  title: string;
+  subtitle: string;
+  portfolioList: PortfolioProps[];
+}
+
+export interface ConsultationProps {
+  title: string;
+  subtitle: string;
+  image: string;
+  alt: string;
+}
+
+export interface FAQItem {
+  id: number;
+  question: string;
+  answer: string;
+}
+
+export interface FAQRowProps {
+  item: FAQItem;
+  isOpen: boolean;
+  onToggle: () => void;
+}
+
+export interface FAQHeader {
+  title: string;
+  subtitle: string;
 }
 
 // ==========================================

@@ -18,6 +18,7 @@ const Hero = ({ title, titleSpan, description }: HeroProps) => {
         </div>
         <Button
           size='md'
+          background='orange'
           type='button'
           children="Let's Talk"
           className='w-full md:w-50'
