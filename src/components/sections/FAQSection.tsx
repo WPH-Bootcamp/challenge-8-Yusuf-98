@@ -12,10 +12,9 @@ export default function FAQSection() {
   };
 
   return (
-    <section className='bg-black min-h-screen px-4 py-20 md:px-16 lg:px-11xl'>
-      {/* Header row */}
+    <section className='dar:bg-base-black min-h-screen px-4 py-20 md:px-16 lg:px-11xl'>
       <div className='flex flex-col md:flex-row items-start md:justify-between mb-12'>
-        <h2 className='w-full lg:w-82.75 text-neutral-25 font-bold text-size-display-sm md:text-size-display-lg lg:text-size-display-xl text-left'>
+        <h2 className='w-full lg:w-82.75 dark:text-neutral-25 font-bold text-size-display-sm md:text-size-display-lg lg:text-size-display-xl text-left'>
           {FAQHeaderData.title}
         </h2>
         <p className='w-full lg:w-60.25 text-neutral-400 text-sm md:text-size-md lg:text-size-lg text-start md:text-right mt-auto'>
@@ -42,7 +41,6 @@ export default function FAQSection() {
           ))}
         </div>
 
-        {/* Consultation card — sticky on desktop */}
         <div className='md:ml-auto'>
           <ConsultationCard />
         </div>

@@ -9,7 +9,7 @@ import HeroSection from './components/sections/HeroSection';
 import IndustrySection from './components/sections/IndustrySection';
 import PortfolioSection from './components/sections/PortfolioSection';
 import FAQSection from './components/sections/FAQSection';
-import ConsultationCard from './components/ui/ConsultationCard';
+import ContactFormSection from './components/sections/ContactFormSection';
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
       <PortfolioSection />
       <TestimonialsSection />
       <FAQSection />
+      <ContactFormSection />
     </ThemeProvider>
   );
 }

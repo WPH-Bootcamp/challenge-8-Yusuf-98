@@ -153,6 +153,65 @@ export interface FAQHeader {
   subtitle: string;
 }
 
+// ─── Contact Form ────────────────────────────────────────────────────────────
+
+export interface ServiceOption {
+  id: string;
+  label: string;
+}
+
+export interface ContactFormData {
+  title: string;
+  subtitle: string;
+  namePlaceholder: string;
+  emailPlaceholder: string;
+  messagePlaceholder: string;
+  servicesLabel: string;
+  services: ServiceOption[];
+  submitLabel: string;
+}
+
+export interface ContactFormState {
+  name: string;
+  email: string;
+  message: string;
+  selectedServices: string[];
+}
+
+export interface ContactFormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
+  services?: string;
+}
+
+// ─── Success Popup ───────────────────────────────────────────────────────────
+
+// ─── Success Popup ───────────────────────────────────────────────────────────
+export interface SuccessPopupProps {
+  data: SuccessPopupData;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export interface SuccessPopupData {
+  title: string;
+  description: string;
+  buttonLabel: string;
+}
+
+// ─── Failed Popup ─────────────────────────────────────────────────────────────
+export interface FailedPopupProps {
+  data: FailedPopupData;
+  isOpen: boolean;
+  onRetry: () => void;
+}
+
+export interface FailedPopupData {
+  title: string;
+  description: string;
+  buttonLabel: string;
+}
 // ==========================================
 // Section Data Types
 // ==========================================

@@ -10,10 +10,10 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
         className='w-full flex justify-between text-left group cursor-pointer'
         aria-expanded={isOpen}
       >
-        <span className='text-neutral-25 font-bold text-size-lg md:text-size-xl lg:text-size-display-xs text-left'>
+        <span className='dark:text-neutral-25 font-bold text-size-lg md:text-size-xl lg:text-size-display-xs text-left'>
           {item.question}
         </span>
-        <span className='text-neutral-25 w-6 h-6 shrink-0 select-none'>
+        <span className='dark:text-neutral-25 w-6 h-6 shrink-0 select-none'>
           <img
             src={isOpen ? MinusIcon : PlusIcon}
             alt={isOpen ? 'Collapse' : 'Expand'}

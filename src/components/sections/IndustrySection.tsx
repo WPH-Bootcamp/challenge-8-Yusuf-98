@@ -11,7 +11,7 @@ export default function IndustrySection() {
     <section className='flex flex-col gap-6 md:gap-11 lg:gap-16 px-4 py-10 lg:px-35 lg:py-20'>
       {/* Header */}
       <div className='flex flex-col gap-3.5'>
-        <h2 className='text-white font-bold text-size-display-md md:text-size-display-lg lg:text-size-display-xl'>
+        <h2 className='dark:text-white font-bold text-size-display-md md:text-size-display-lg lg:text-size-display-xl'>
           {industry.title}
         </h2>
         <p className='font-medium text-neutral-400 text-sm md:text-size-md lg:text-size-lg'>
@@ -32,7 +32,7 @@ export default function IndustrySection() {
                 className={[
                   'flex items-center gap-1.5 md:gap-2 text-size-md md:text-size-lg lg:text-size-xl text-left transition-all duration-200 cursor-pointer',
                   isActive
-                    ? 'text-neutral-25 font-semibold'
+                    ? 'dark:text-neutral-25 font-semibold'
                     : 'text-neutral-600 font-normal hover:text-neutral-400',
                 ].join(' ')}
               >

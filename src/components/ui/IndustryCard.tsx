@@ -7,7 +7,7 @@ export default function IndustryCard({
   imageAlt,
 }: IndustryProps) {
   return (
-    <div className='flex flex-col gap-5'>
+    <div className='flex flex-col gap-5 max-w-210 ml-auto'>
       <p className='text-size-sm md:text-size-md lg:text-size-lg font-medium'>
         {description}
       </p>
