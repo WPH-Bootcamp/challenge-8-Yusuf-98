@@ -15,7 +15,7 @@ function PortfolioCard({ id, category, label, image, alt }: PortfolioProps) {
         <p className='font-medium text-size-sm md:text-size-md text-primary-200 transition-opacity duration-300 group-hover:opacity-80'>
           {category}
         </p>
-        <p className='font-bold text-size-md md:text-size-xl dark:text-neutral-25 transition-colors duration-300 group-hover:text-neutral-25/70'>
+        <p className='font-bold text-size-md md:text-size-xl dark:text-neutral-25 transition-colors duration-300 group-hover:text-neutral-500'>
           {label}
         </p>
       </div>

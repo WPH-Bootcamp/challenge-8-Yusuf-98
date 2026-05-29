@@ -18,7 +18,7 @@ export default function FailedPopup({
         aria-hidden='true'
       />
 
-      {/* ── Modal ── */}
+      {/* ── Body Popup ── */}
       <div
         role='alertdialog'
         aria-modal='true'

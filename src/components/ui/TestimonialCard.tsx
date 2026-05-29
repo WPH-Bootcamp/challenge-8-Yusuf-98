@@ -13,10 +13,10 @@ const TestimonialCard = ({
   const stars = Array.from({ length: rating ?? 0 });
 
   return (
-    <div className='relative w-[594px] my-9.5 group rounded-2xl'>
+    <div className='relative w-90.25 md:w-120 lg:w-148.5 my-9.5 group rounded-2xl'>
       {/* Border Animasinya */}
       <div
-        className='absolute -inset-[1px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin-border'
+        className='absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin-border'
         style={{
           background:
             'conic-gradient(from var(--angle), #ff6c37, #000000 50%, #ff6c37)',
@@ -28,7 +28,7 @@ const TestimonialCard = ({
         <img
           src={QuoteIcon}
           alt='Quote Icon'
-          className='w-16 h-16 lg:w-20 lg:h-20 object-contain absolute -top-8.5 left-12.5 lg:-top-11 z-20'
+          className='w-16 h-16 lg:w-20 lg:h-20 object-contain absolute -top-8.5 left-12.5 lg:-top-11 z-2'
         />
 
         <div className='flex flex-col items-center justify-center pt-10 pb-16 px-6 gap-4 lg:pt-12 lg:px-8 lg:gap-6'>
@@ -60,7 +60,7 @@ const TestimonialCard = ({
         <img
           src={avatar || '/default-avatar.png'}
           alt={name}
-          className='w-15 h-15 rounded-full lg:w-19 lg:h-19 object-contain absolute -bottom-6 lg:-bottom-7.5 z-20'
+          className='w-15 h-15 rounded-full lg:w-19 lg:h-19 object-contain absolute -bottom-6 lg:-bottom-7.5 z-2'
         />
       </div>
     </div>

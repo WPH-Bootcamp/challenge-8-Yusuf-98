@@ -46,7 +46,7 @@ export default function ProcessTimeline() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Line goes from center of bubble #1 to center of bubble #6
+  // Line dari tengah bubble #1 ke tengah bubble #6
   const lineStyle: React.CSSProperties = isMobile
     ? {
         position: 'absolute',
@@ -68,10 +68,10 @@ export default function ProcessTimeline() {
       };
 
   return (
-    <section className='dark:bg-base-black min-h-screen py-10 md:py-20 px-4 md:px-16 lg:px-35'>
+    <section className='w-full dark:bg-base-black min-h-screen py-10 md:py-20 px-4 md:px-10xl lg:px-11xl'>
       {/* Header */}
-      <div className='flex flex-col gap-3 md:gap-3.5 mb-6'>
-        <h2 className='dark:text-neutral-25 text-center text-size-display-sm md:text-size-display-xl font-bold'>
+      <div className='flex flex-col gap-3 md:gap-3.5 mb-16'>
+        <h2 className='dark:text-neutral-25 text-center text-size-display-sm md:text-size-display-lg lg:text-size-display-xl font-bold'>
           {processHeader.title}
         </h2>
         <p className='text-neutral-400 text-center text-size-sm md:text-size-lg mx-auto'>
@@ -80,8 +80,8 @@ export default function ProcessTimeline() {
       </div>
 
       {/* Timeline */}
-      <div ref={timelineRef} className='relative mx-auto max-w-[900px]'>
-        {/* Vertical line — spans from center of first to last bubble */}
+      <div ref={timelineRef} className='relative mx-auto'>
+        {/* Vertical line */}
         <div style={lineStyle} ref={lineTrackRef}>
           <div className='absolute inset-0 bg-neutral-200' />
           <div

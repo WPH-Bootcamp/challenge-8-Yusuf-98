@@ -212,6 +212,30 @@ export interface FailedPopupData {
   description: string;
   buttonLabel: string;
 }
+
+// ─── Footer ── //
+
+export interface FooterNavItem {
+  label: string;
+  href: string;
+}
+
+export interface FooterSocialItem {
+  name: string;
+  href: string;
+  icon: {
+    dark: string;
+    light: string;
+  };
+}
+
+export interface FooterData {
+  headline: string;
+  logoSrc: string;
+  logoAlt: string;
+  navItems: FooterNavItem[];
+  socialItems: FooterSocialItem[];
+}
 // ==========================================
 // Section Data Types
 // ==========================================

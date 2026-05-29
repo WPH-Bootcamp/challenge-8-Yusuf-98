@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FAQHeaderData } from '../../data/faqHeader';
 import { faqItems } from '../../data/faqItems';
-import FAQRow from '../ui/FaqRow';
+import FAQRow from '../ui/FAQRow';
 import ConsultationCard from '../ui/ConsultationCard';
 
 export default function FAQSection() {
@@ -12,7 +12,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className='dar:bg-base-black min-h-screen px-4 py-20 md:px-16 lg:px-11xl'>
+    <section className='dar:bg-base-black min-h-screen px-4 py-20 md:px-10xl lg:px-11xl'>
       <div className='flex flex-col md:flex-row items-start md:justify-between mb-12'>
         <h2 className='w-full lg:w-82.75 dark:text-neutral-25 font-bold text-size-display-sm md:text-size-display-lg lg:text-size-display-xl text-left'>
           {FAQHeaderData.title}
@@ -25,7 +25,7 @@ export default function FAQSection() {
       {/* Divider */}
       <div className='border border-neutral-800 mb-12' />
 
-      {/* Body: FAQ list + Consultation card */}
+      {/* FAQ list + Consultation card */}
       <div className='w-full flex flex-col md:flex-row gap-15 items-center md:items-start justify-center md:justify-between'>
         {/* FAQ accordion */}
         <div className='flex-1 min-w-0 divide-y divide-neutral-800'>

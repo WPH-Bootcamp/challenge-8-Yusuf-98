@@ -35,7 +35,7 @@ const Logo = ({
         href='#'
         onClick={onClick}
         className={
-          'font-logo font-semibold no-underline text-black dark:text-white text-size-xl md:text-size-display-xs'
+          'font-logo font-semibold no-underline dark:text-white text-size-xl md:text-size-display-xs'
         }
       >
         {title}

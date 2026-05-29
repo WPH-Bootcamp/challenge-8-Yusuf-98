@@ -13,10 +13,10 @@ const ServiceCard = ({ title, description, icon }: ServiceCardProps) => {
         className='w-16 h-16 lg:w-20 lg:h-20 object-contain absolute -top-5 lg:-top-6.5'
       />
       <div className='flex flex-col gap-1'>
-        <h3 className='dark:text-neutral-25 font-bold text-md lg:text-xl'>
+        <h3 className='dark:text-neutral-25 font-bold text-size-md lg:text-size-xl'>
           {title}
         </h3>
-        <p className='text-neutral-400 font-medium text-sm lg:text-md'>
+        <p className='text-neutral-400 font-medium text-size-sm lg:text-size-md'>
           {description}
         </p>
       </div>

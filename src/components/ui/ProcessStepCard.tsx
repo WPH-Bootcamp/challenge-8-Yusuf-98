@@ -57,7 +57,7 @@ export function StepCard({ step, active, isMobile }: StepCardProps) {
   return (
     <div
       className={[
-        'relative flex items-start mb-10',
+        'w-full relative flex items-start mb-10',
         step.side === 'left'
           ? 'flex-row pr-[calc(50%+2.5rem)]'
           : 'flex-row-reverse pl-[calc(50%+2.5rem)]',
@@ -65,7 +65,7 @@ export function StepCard({ step, active, isMobile }: StepCardProps) {
     >
       {/* Card */}
       <div
-        className='flex-1 dark:bg-neutral-950 border dark:border-neutral-900 rounded-2xl p-4 cursor-pointer select-none'
+        className='flex-1 dark:bg-neutral-950 border dark:border-neutral-900 rounded-2xl p-6 cursor-pointer select-none'
         onClick={() => setOpen((v) => !v)}
       >
         <div className='flex items-center justify-between gap-1'>
@@ -89,7 +89,7 @@ export function StepCard({ step, active, isMobile }: StepCardProps) {
       <div
         className={[
           'absolute left-1/2 -translate-x-1/2 z-10',
-          'w-8 h-8 p-1.5 rounded-full border dark:border-neutral-900 flex items-center justify-center',
+          'w-12 h-12 p-2 rounded-full border dark:border-neutral-900 flex items-center justify-center',
           'dark:text-neutral-25 text-size-xs md:text-size-md text-center font-bold transition-colors duration-300',
           active ? 'bg-primary-200' : 'bg-neutral-400',
         ].join(' ')}

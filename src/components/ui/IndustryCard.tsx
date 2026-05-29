@@ -7,16 +7,16 @@ export default function IndustryCard({
   imageAlt,
 }: IndustryProps) {
   return (
-    <div className='flex flex-col gap-5 max-w-210 ml-auto'>
+    <div className='flex flex-col gap-5 md:ml-auto'>
       <p className='text-size-sm md:text-size-md lg:text-size-lg font-medium'>
         {description}
       </p>
-      <div className='rounded-4xl overflow-hidden max-w-210 ml-auto'>
+      <div className='w-full md:ml-auto'>
         <img
           key={id}
           src={image}
           alt={imageAlt}
-          className='w-full object-cover transition-opacity duration-300'
+          className='rounded-xl w-full h-50 object-cover transition-opacity duration-300'
         />
       </div>
     </div>

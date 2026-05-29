@@ -2,6 +2,9 @@ import type { FAQRowProps } from '../../types';
 import PlusIcon from '../../assets/icons/plus.png';
 import MinusIcon from '../../assets/icons/minus.png';
 
+{
+  /* FAQ Accordion */
+}
 function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
   return (
     <div className='flex flex-col gap-4 mb-4'>
@@ -10,6 +13,7 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
         className='w-full flex justify-between text-left group cursor-pointer'
         aria-expanded={isOpen}
       >
+        {/* Question */}
         <span className='dark:text-neutral-25 font-bold text-size-lg md:text-size-xl lg:text-size-display-xs text-left'>
           {item.question}
         </span>
@@ -23,9 +27,9 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
       </button>
 
       <div
-        className='overflow-hidden transition-all duration-300 ease-in-out'
-        style={{ maxHeight: isOpen ? '200px' : '0px', opacity: isOpen ? 1 : 0 }}
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-50 opacity-100' : 'max-h-0 opacity-0'}`}
       >
+        {/* Answer */}
         <p className='text-neutral-400 font-medium text-size-sm md:text-size-md lg:text-size-xl'>
           {item.answer}
         </p>

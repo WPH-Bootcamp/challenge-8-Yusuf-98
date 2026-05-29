@@ -26,7 +26,7 @@ const FAILED_DATA = {
   buttonLabel: 'Try Again',
 };
 
-// ── Validation ──//
+// ── Validasi ──//
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function validate(form: ContactFormState): ContactFormErrors {
@@ -48,7 +48,7 @@ function validate(form: ContactFormState): ContactFormErrors {
   return errors;
 }
 
-// ── Props ─── //
+// ── Props helper supaya singkat ─── //
 interface Props {
   data: ContactFormData;
 }
@@ -272,8 +272,8 @@ export default function ContactFormCard({ data }: Props) {
                 {data.servicesLabel}
               </label>
 
-              <div className='flex w-full'>
-                <div className='flex flex-col gap-4 flex-1'>
+              <div className='flex flex-col md:flex-row gap-3.5 md:gap-3.5'>
+                <div className='flex flex-col gap-4 flex-1 w-76'>
                   {col1.map((service) => (
                     <ServiceCheckbox
                       key={service.id}
@@ -318,7 +318,7 @@ export default function ContactFormCard({ data }: Props) {
   );
 }
 
-// ── ServiceCheckbox ── //
+// ── Service Checkbox ── //
 interface CheckboxProps {
   service: ServiceOption;
   checked: boolean;

@@ -10,6 +10,7 @@ import IndustrySection from './components/sections/IndustrySection';
 import PortfolioSection from './components/sections/PortfolioSection';
 import FAQSection from './components/sections/FAQSection';
 import ContactFormSection from './components/sections/ContactFormSection';
+import FooterSection from './components/sections/FooterSection';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <TestimonialsSection />
       <FAQSection />
       <ContactFormSection />
+      <FooterSection />
     </ThemeProvider>
   );
 }
