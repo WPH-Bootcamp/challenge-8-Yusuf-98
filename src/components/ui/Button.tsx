@@ -4,17 +4,6 @@
 import React from 'react';
 import type { ButtonBg, ButtonProps, ButtonSize } from '../../types';
 
-/**
- * Reusable Button Component
- *
- * @param variant - Style variant: 'primary' | 'secondary' | 'outline'
- * @param size - Button size: 'sm' | 'md' | 'lg'
- * @param children - Button content
- * @param onClick - Click handler
- * @param className - Additional CSS classes
- * @param disabled - Disabled state
- * @param type - Button type attribute
- */
 const Button: React.FC<ButtonProps> = ({
   size,
   background,
