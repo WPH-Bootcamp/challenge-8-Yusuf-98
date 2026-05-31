@@ -10,7 +10,7 @@ export default function SuccessPopup({
   if (!isOpen) return null;
 
   return (
-    <>
+    <div>
       {/* ── Backdrop ─── */}
       <div
         className='fixed inset-0 z-40 bg-base-black/80'
@@ -60,6 +60,6 @@ export default function SuccessPopup({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

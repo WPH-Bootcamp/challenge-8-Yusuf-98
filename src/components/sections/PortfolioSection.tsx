@@ -3,7 +3,10 @@ import PortfolioCard from '../ui/PortfolioCard';
 
 function PortfolioSection() {
   return (
-    <section className='w-full flex flex-col items-center py-10 md:py-16 lg:py-20 px-4 md:px-10xl lg:px-11xl gap-6 md:gap-10 lg:gap-16'>
+    <section
+      id='portfolio'
+      className='w-full flex flex-col items-center py-10 md:py-16 lg:py-20 px-4 md:px-10xl lg:px-11xl gap-6 md:gap-10 lg:gap-16'
+    >
       {/* Header */}
       <div className='text-center flex flex-col items-center gap-2.75'>
         <h1 className='font-bold text-size-display-sm md:text-size-display-lg lg:text-size-display-xl dark:text-neutral-25'>

@@ -1,7 +1,7 @@
 import statList from '../../data/statList';
-import StatCard from '../ui/StatCard';
+import StatCard from './StatCard';
 
-function StatSection() {
+function StatsList() {
   return (
     <div className='flex flex-col py-20 px-4 gap-6 md:px-10xl lg:px-11xl md:gap-12 lg:gap-16'>
       {/* Header */}
@@ -25,4 +25,4 @@ function StatSection() {
   );
 }
 
-export default StatSection;
+export default StatsList;

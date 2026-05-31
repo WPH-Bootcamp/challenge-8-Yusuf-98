@@ -1,7 +1,7 @@
-import ServiceCard from '../ui/ServiceCard';
+import ServiceCard from './ServiceCard';
 import { services } from '../../data/services';
 
-function ServicesSection() {
+function ITServices() {
   return (
     <div className='flex flex-col py-10 px-4 gap-10 md:py-15 md:px-10xl md:gap-14 lg:py-20 lg:px-11xl lg:gap-16'>
       {/* Header */}
@@ -25,4 +25,4 @@ function ServicesSection() {
   );
 }
 
-export default ServicesSection;
+export default ITServices;

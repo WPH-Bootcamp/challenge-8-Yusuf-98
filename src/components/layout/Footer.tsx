@@ -1,6 +1,6 @@
 import FooterCard from '../ui/FooterCard';
 
-export default function FooterSection() {
+export default function Footer() {
   return (
     <footer
       id='footer'

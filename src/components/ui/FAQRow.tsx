@@ -1,11 +1,19 @@
+import { useTheme } from '../../context/useTheme';
 import type { FAQRowProps } from '../../types';
-import PlusIcon from '../../assets/icons/plus.png';
-import MinusIcon from '../../assets/icons/minus.png';
+import PlusDarkIcon from '../../assets/icons/plus-dark.png';
+import MinusDarkIcon from '../../assets/icons/minus-dark.png';
+import PlusLightIcon from '../../assets/icons/plus-light.png';
+import MinusLightIcon from '../../assets/icons/minus-light.png';
 
 {
   /* FAQ Accordion */
 }
 function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
+  const plusIcon = isDark ? PlusDarkIcon : PlusLightIcon;
+  const minusIcon = isDark ? MinusDarkIcon : MinusLightIcon;
   return (
     <div className='flex flex-col gap-4 mb-4'>
       <button
@@ -19,9 +27,9 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
         </span>
         <span className='dark:text-neutral-25 w-6 h-6 shrink-0 select-none'>
           <img
-            src={isOpen ? MinusIcon : PlusIcon}
+            src={isOpen ? minusIcon : plusIcon}
             alt={isOpen ? 'Collapse' : 'Expand'}
-            className='w-full h-full object-contain'
+            className={`object-contain ${isDark ? 'w-6 h-6' : 'w-4 h-4'}`}
           />
         </span>
       </button>

@@ -1,5 +1,5 @@
 import { useTheme } from '../../context/useTheme';
-import Hero from '../ui/Hero';
+import Hero from '../ui/HeroTitle';
 import { hero } from '../../data/hero';
 import HeroImageDark from '../../assets/images/hero-image-dark.png';
 import HeroImageLight from '../../assets/images/hero-image-light.png';
@@ -8,7 +8,10 @@ function HeroSection() {
   const { theme } = useTheme();
   const heroImage = theme === 'dark' ? HeroImageDark : HeroImageLight;
   return (
-    <section className='w-full mt-21 px-4 md:px-10xl lg:px-11xl relative overflow-hidden'>
+    <section
+      id='hero'
+      className='w-full mt-21 px-4 md:px-10xl lg:px-11xl relative overflow-hidden'
+    >
       <div className='absolute inset-0 z-0 pointer-events-none'></div>
       <div className=' grid items-center md:grid-cols-[1.1fr_0.9fr] gap-10.75 '>
         <div className='w-full h-full relative pt-12.5 md:pt-hero-md lg:pt-hero-lg z-10 '>

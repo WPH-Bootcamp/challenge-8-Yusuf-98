@@ -3,20 +3,33 @@ import type { StepCardProps } from '../../types';
 import UpArrow from '../../assets/icons/chevron-up.png';
 import DownArrow from '../../assets/icons/chevron-down.png';
 
-// Distance from top of step row to vertical center of bubble
-// bubble top offset = 18px padding, bubble height = 36px → center = 18 + 18 = 36px
-export const BUBBLE_TOP = 18; // top: 18px (matches py-[18px] card padding)
-export const BUBBLE_SIZE = 36; // w-9 h-9
-export const BUBBLE_CENTER = BUBBLE_TOP + BUBBLE_SIZE / 2; // 36px
+// -- Bubble constants
+export const BUBBLE_TOP = 18;
+export const BUBBLE_SIZE = 48;
+export const BUBBLE_CENTER = BUBBLE_TOP + BUBBLE_SIZE / 2;
 
-export function StepCard({ step, active, isMobile }: StepCardProps) {
+export function StepCard({
+  step,
+  active,
+  isMobile,
+  bubbleRef,
+  onToggle,
+}: StepCardProps) {
   const [open, setOpen] = useState(true);
 
+  // -- Toggle card & notify parent after 1 frame
+  const handleToggle = () => {
+    setOpen((v) => !v);
+    requestAnimationFrame(() => onToggle?.());
+  };
+
+  // -- Mobile layout
   if (isMobile) {
     return (
       <div className='relative flex items-start mb-5 pl-13'>
-        {/* Bubble */}
+        {/* -- Bubble */}
         <div
+          ref={bubbleRef}
           className={[
             'absolute left-0 z-10 shrink-0',
             'w-12 h-12 p-2 rounded-full flex items-center justify-center',
@@ -28,10 +41,10 @@ export function StepCard({ step, active, isMobile }: StepCardProps) {
           {step.id}
         </div>
 
-        {/* Card */}
+        {/* -- Card */}
         <div
           className='flex-1 dark:bg-neutral-950 border dark:border-neutral-900 rounded-2xl p-6 cursor-pointer select-none'
-          onClick={() => setOpen((v) => !v)}
+          onClick={handleToggle}
         >
           <div className='flex items-center justify-between gap-3'>
             <span className='dark:text-neutral-25 font-bold text-size-md md:text-size-xl leading-snug'>
@@ -53,7 +66,7 @@ export function StepCard({ step, active, isMobile }: StepCardProps) {
     );
   }
 
-  // Desktop zigzag
+  // -- Desktop zigzag layout
   return (
     <div
       className={[
@@ -63,10 +76,10 @@ export function StepCard({ step, active, isMobile }: StepCardProps) {
           : 'flex-row-reverse pl-[calc(50%+2.5rem)]',
       ].join(' ')}
     >
-      {/* Card */}
+      {/* -- Card */}
       <div
         className='flex-1 dark:bg-neutral-950 border dark:border-neutral-900 rounded-2xl p-6 cursor-pointer select-none'
-        onClick={() => setOpen((v) => !v)}
+        onClick={handleToggle}
       >
         <div className='flex items-center justify-between gap-1'>
           <span className='dark:text-neutral-25 font-bold text-size-md -tracking-1 md:text-size-xl'>
@@ -85,8 +98,9 @@ export function StepCard({ step, active, isMobile }: StepCardProps) {
         )}
       </div>
 
-      {/* Bubble */}
+      {/* -- Bubble */}
       <div
+        ref={bubbleRef}
         className={[
           'absolute left-1/2 -translate-x-1/2 z-10',
           'w-12 h-12 p-2 rounded-full border dark:border-neutral-900 flex items-center justify-center',

@@ -41,11 +41,9 @@ export default function FooterCard() {
               <a
                 key={item.label}
                 href={item.href}
-                className='
-                font-medium text-size-sm md:text-size-md
-                dark:text-neutral-25 dark:hover:text-neutral-400
-                transition-colors duration-200 whitespace-nowrap
-              '
+                className={`font-medium text-size-sm md:text-size-md
+                dark:text-neutral-25 
+                transition-colors duration-200 whitespace-nowrap ${isDark ? 'hover:text-primary-200' : 'hover:text-primary-200'}`}
               >
                 {item.label}
               </a>
@@ -62,12 +60,11 @@ export default function FooterCard() {
               target='_blank'
               rel='noopener noreferrer'
               aria-label={social.name}
-              className='
-                w-10 h-10 rounded-full border
+              className={`w-10 h-10 rounded-full border
                 dark:border-neutral-800 dark:bg-neutral-950
-                dark:hover:bg-primary-200 flex items-center justify-center
-                transition-color duration-800 shrink-0
-              '
+                flex items-center justify-center
+                transition-color duration-800 shrink-0 ${isDark ? 'hover:bg-primary-200' : 'hover:bg-primary-200'}
+              `}
             >
               <img
                 src={isDark ? social.icon.dark : social.icon.light}

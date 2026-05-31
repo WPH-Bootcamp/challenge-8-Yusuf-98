@@ -17,15 +17,6 @@ import React from 'react';
 // ==========================================
 
 /**
- * Hero Props
- */
-export interface HeroProps {
-  title: string;
-  titleSpan: string;
-  description: string;
-  image?: string;
-}
-/**
  * Button variant types
  * Gunakan ini untuk Button component
  */
@@ -42,6 +33,9 @@ export interface HeroProps {
 //   disabled?: boolean;
 // }
 
+/**
+ * Button types
+ */
 export type ButtonSize = 'sm' | 'md';
 export type ButtonBg = 'orange' | 'white';
 
@@ -55,6 +49,19 @@ export interface ButtonProps {
   type: 'button' | 'submit' | 'reset';
 }
 
+// ==========================================
+// Home Types
+// ==========================================
+
+/**
+ * Navigation menu types
+ */
+export interface NavItem {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
 /**
  * Logo types
  */
@@ -66,7 +73,78 @@ export interface LogoProps {
 }
 
 /**
- * Service Card types
+ * Hero types
+ */
+export interface HeroProps {
+  title: string;
+  titleSpan: string;
+  description: string;
+  image?: string;
+}
+
+// ==========================================
+// About section Types
+// ==========================================
+
+/**
+ * Partner types
+ */
+export interface PartnerItem {
+  id: number;
+  label: string;
+  logo: string;
+}
+
+export interface Partners {
+  title: string;
+  partners: PartnerItem[];
+  className?: '';
+}
+
+/**
+ * Stat Items types
+ */
+export interface StatProps {
+  id: number;
+  value: string;
+  label: string;
+}
+
+export interface StatData {
+  title: string;
+  description: string;
+  list: StatProps[];
+}
+
+/**
+ * Process step types
+ */
+export interface ProcessHeader {
+  title: string;
+  description: string;
+}
+
+export interface ProcessStep {
+  id: number;
+  title: string;
+  subtitle: string;
+  side: 'left' | 'right';
+}
+
+export interface StepCardProps {
+  step: ProcessStep;
+  active: boolean;
+  isMobile: boolean;
+  bubbleRef?: React.Ref<HTMLDivElement>;
+  onToggle?: () => void;
+}
+
+// ==========================================
+// Service Section Types
+// ==========================================
+
+/**
+ * Services types
  */
 export interface ServiceCardProps {
   id: number;
@@ -82,7 +160,49 @@ export interface ServiceCardData {
 }
 
 /**
- * Testimonial Card types
+ * Industry types
+ */
+export interface IndustryProps {
+  id: number;
+  label?: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+}
+
+export interface IndustryData {
+  title: string;
+  description: string;
+  industries: IndustryProps[];
+}
+
+// ==========================================
+// Portfolio Section Types
+// ==========================================
+
+/**
+ * Portfolio types
+ */
+export interface PortfolioProps {
+  id: number;
+  category: string;
+  label: string;
+  image: string;
+  alt: string;
+}
+
+export interface PortfolioData {
+  title: string;
+  subtitle: string;
+  portfolioList: PortfolioProps[];
+}
+
+// ==========================================
+// Testimonial Section Types
+// ==========================================
+
+/**
+ * Testimonial types
  */
 export interface Testimonial {
   id: number;
@@ -100,35 +220,13 @@ export interface TestimonialData {
   list: Testimonial[];
 }
 
+// ==========================================
+// FAQ Section Types
+// ==========================================
+
 /**
- * Stat Item
+ * FAQ types
  */
-export interface StatProps {
-  id: number;
-  value: string;
-  label: string;
-}
-
-export interface StatData {
-  title: string;
-  description: string;
-  list: StatProps[];
-}
-
-export interface PortfolioProps {
-  id: number;
-  category: string;
-  label: string;
-  image: string;
-  alt: string;
-}
-
-export interface PortfolioData {
-  title: string;
-  subtitle: string;
-  portfolioList: PortfolioProps[];
-}
-
 export interface ConsultationProps {
   title: string;
   subtitle: string;
@@ -153,8 +251,13 @@ export interface FAQHeader {
   subtitle: string;
 }
 
-// ─── Contact Form ────────────────────────────────────────────────────────────
+// ==========================================
+// Contact Section Types
+// ==========================================
 
+/**
+ * Contact form types
+ */
 export interface ServiceOption {
   id: string;
   label: string;
@@ -185,36 +288,84 @@ export interface ContactFormErrors {
   services?: string;
 }
 
-// ─── Success Popup ───────────────────────────────────────────────────────────
+/**
+ * Input field types
+ */
+export type InputFieldType = 'text' | 'email' | 'textarea';
 
-// ─── Success Popup ───────────────────────────────────────────────────────────
+export interface InputFieldProps {
+  label: string;
+  type?: InputFieldType;
+  placeholder: string;
+  value: string;
+  fieldKey: keyof ContactFormErrors;
+  touched: boolean;
+  error?: string;
+  rows?: number;
+  onChange: (value: string) => void;
+  onBlur: () => void;
+}
+
+/**
+ * Service checkbox types
+ */
+export interface CheckboxProps {
+  label: string;
+  service: ServiceOption;
+  checked: boolean;
+  onToggle: (id: string) => void;
+}
+
+export interface CheckboxServicesProps {
+  label: string;
+  services: ServiceOption[];
+  selectedServices: string[];
+  touched: boolean;
+  error?: string;
+  onToggle: (id: string) => void;
+}
+
+// ==========================================
+// Popup Types
+// ==========================================
+
+/**
+ * Success popup types
+ */
 export interface SuccessPopupProps {
-  data: SuccessPopupData;
+  data: SuccessPopup;
   isOpen: boolean;
   onClose: () => void;
 }
 
-export interface SuccessPopupData {
+export interface SuccessPopup {
   title: string;
   description: string;
   buttonLabel: string;
 }
 
-// ─── Failed Popup ─────────────────────────────────────────────────────────────
+/**
+ * Failed popup types
+ */
 export interface FailedPopupProps {
-  data: FailedPopupData;
+  data: FailedPopup;
   isOpen: boolean;
   onRetry: () => void;
 }
 
-export interface FailedPopupData {
+export interface FailedPopup {
   title: string;
   description: string;
   buttonLabel: string;
 }
 
-// ─── Footer ── //
+// ==========================================
+// Footer Types
+// ==========================================
 
+/**
+ * Footer types
+ */
 export interface FooterNavItem {
   label: string;
   href: string;
@@ -236,6 +387,32 @@ export interface FooterData {
   navItems: FooterNavItem[];
   socialItems: FooterSocialItem[];
 }
+
+// ==========================================
+// Theme Types
+// ==========================================
+
+export type Theme = 'light' | 'dark';
+
+export interface ThemeContextType {
+  theme: Theme;
+  toggleTheme: () => void;
+}
+// ==========================================
+// TODO: Add more types as needed!
+// ==========================================
+
+/**
+ * Pagination Type
+ */
+
+export interface PaginationProps {
+  total: number;
+  activeIndex: number;
+  onClick: (index: number) => void;
+  className: string;
+}
+
 // ==========================================
 // Section Data Types
 // ==========================================
@@ -269,116 +446,9 @@ export interface FooterData {
 //   };
 // }
 
-/**
- * Process Step
- * Digunakan di ProcessSection
- */
-
-export interface ProcessHeader {
-  title: string;
-  description: string;
-}
-
-export interface ProcessStep {
-  id: number;
-  title: string;
-  subtitle: string;
-  side: 'left' | 'right';
-}
-
-export interface StepCardProps {
-  step: ProcessStep;
-  active: boolean;
-  isMobile: boolean;
-}
-/**
- * Industry Item
- * Digunakan di IndustrySection
- */
-
-export interface IndustryProps {
-  id: number;
-  label?: string;
-  description: string;
-  image: string;
-  imageAlt: string;
-}
-
-export interface IndustryData {
-  title: string;
-  description: string;
-  industries: IndustryProps[];
-}
-
-/**
- * Portfolio / Project Item
- * Digunakan di PortfolioSection
- */
-
-/**
- * FAQ Item
- * Digunakan di FAQSection
- */
-// ==========================================
-// Navigation Types
-// ==========================================
-
-/**
- * Navigation menu item
- */
-export interface NavItem {
-  label: string;
-  href: string;
-  external?: boolean;
-}
-
-/**
- * Partner List
- */
-export interface PartnerItem {
-  id: number;
-  label: string;
-  logo: string;
-}
-
-export interface Partners {
-  title: string;
-  partners: PartnerItem[];
-  className?: '';
-}
-
 // ==========================================
 // Form Types (if needed)
 // ==========================================
-
-/**
- * Contact form data
- */
-
-// ==========================================
-// Theme Types
-// ==========================================
-
-export type Theme = 'light' | 'dark';
-
-export interface ThemeContextType {
-  theme: Theme;
-  toggleTheme: () => void;
-}
-// ==========================================
-// TODO: Add more types as needed!
-// ==========================================
-
-/**
- * Pagination Type
- */
-
-export interface PaginationProps {
-  total: number;
-  activeIndex: number;
-  onClick: (index: number) => void;
-  className: string;
-}
 
 /**
  * Tips:

@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { industry } from '../../data/industry';
-import IndustryCard from '../ui/IndustryCard';
+import IndustryCard from './IndustryCard';
 
-export default function IndustrySection() {
+export default function IndustryServices() {
   const [activeId, setActiveId] = useState<number>(1);
 
   const active = industry.industries.find((i) => i.id === activeId)!;
 
   return (
-    <section className='flex flex-col gap-6 md:gap-11 lg:gap-16 px-4 py-10 md:px-10xl lg:px-11xl lg:py-20'>
+    <div className='flex flex-col gap-6 md:gap-11 lg:gap-16 px-4 py-10 md:px-10xl lg:px-11xl lg:py-20'>
       {/* Header */}
       <div className='flex flex-col gap-3.5'>
         <h2 className='dark:text-white font-bold text-size-display-md md:text-size-display-lg lg:text-size-display-xl'>
@@ -57,6 +57,6 @@ export default function IndustrySection() {
           />
         </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -19,6 +19,10 @@ const Hero = ({ title, titleSpan, description }: HeroProps) => {
         size='md'
         background='orange'
         type='button'
+        onClick={() => {
+          const el = document.querySelector('#contact');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }}
         children="Let's Talk"
         className='w-full md:w-50'
       />

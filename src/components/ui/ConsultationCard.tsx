@@ -28,6 +28,10 @@ function ConsultationCard() {
           type='button'
           children='Free Consultation'
           className='w-full font-bold'
+          onClick={() => {
+            const el = document.querySelector('#contact');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
         />
       </div>
     </div>
