@@ -171,8 +171,8 @@ export default function ContactFormCard({ data }: Props) {
                 }}
                 onBlur={() => handleBlur('name')}
                 className={`
-                  w-full rounded-lg px-4 py-3 outline-none
-                  dark:bg-neutral-900 border
+                  w-full rounded-lg px-4 py-2 outline-none
+                  dark:bg-base-black border
                   font-medium text-size-md dark:text-neutral-25
                   placeholder:text-neutral-500
                   transition-colors
@@ -209,8 +209,8 @@ export default function ContactFormCard({ data }: Props) {
                 }}
                 onBlur={() => handleBlur('email')}
                 className={`
-                  w-full rounded-lg px-4 py-3 outline-none
-                  dark:bg-neutral-900 border
+                  w-full rounded-lg px-4 py-2 outline-none
+                  dark:bg-base-black border
                   font-medium text-size-md dark:text-neutral-25
                   placeholder:text-neutral-500
                   transition-colors
@@ -236,7 +236,7 @@ export default function ContactFormCard({ data }: Props) {
               <textarea
                 placeholder={data.messagePlaceholder}
                 value={form.message}
-                rows={5}
+                rows={4}
                 onChange={(e) => {
                   setForm({ ...form, message: e.target.value });
                   if (touched.message)
@@ -247,8 +247,8 @@ export default function ContactFormCard({ data }: Props) {
                 }}
                 onBlur={() => handleBlur('message')}
                 className={`
-                  w-full rounded-lg px-4 py-3 outline-none resize-none
-                  dark:bg-neutral-900 border
+                  w-full rounded-lg px-4 py-2 outline-none resize-none
+                  dark:bg-base-black border
                   font-medium text-size-md dark:text-neutral-25
                   placeholder:text-neutral-500
                   transition-colors

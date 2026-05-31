@@ -65,8 +65,8 @@ export default function FooterCard() {
               className='
                 w-10 h-10 rounded-full border
                 dark:border-neutral-800 dark:bg-neutral-950
-                flex items-center justify-center
-                transition-colors duration-200 shrink-0
+                dark:hover:bg-primary-200 flex items-center justify-center
+                transition-color duration-800 shrink-0
               '
             >
               <img

@@ -16,7 +16,7 @@ export default function IndustryCard({
           key={id}
           src={image}
           alt={imageAlt}
-          className='rounded-xl w-full h-50 object-cover transition-opacity duration-300'
+          className='rounded-xl w-full h-50 md:h-auto object-cover transition-opacity duration-300'
         />
       </div>
     </div>

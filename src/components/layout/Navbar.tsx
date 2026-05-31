@@ -11,15 +11,8 @@ import hamburgerIcon from '../../assets/icons/hamburger-icon.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Auto-close mobile menu saat layar lebih besar dari 767px
   useEffect(() => {
@@ -46,15 +39,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav
-        className={`fixed w-full h-21 border-b top-0 z-40 transition-all duration-300 backdrop-blur-2xl ${
-          isScrolled
-            ? isDark
-              ? 'bg-neutral-950/90 border-neutral-800'
-              : 'bg-white/90 border-neutral-200'
-            : 'bg-transparent border-transparent'
-        }`}
-      >
+      <nav className='fixed w-full h-21 top-0 z-40 transition-all duration-300 backdrop-blur-2xl'>
         <div className='flex h-21 items-center justify-between px-4 py-6 md:px-10xl lg:px-11xl'>
           {/* Logo */}
           <Logo title='Your Logo' />
@@ -82,7 +67,10 @@ const Navbar = () => {
 
           {/* Toggle dark/light mode */}
           <div className='flex items-center gap-4'>
-            <button onClick={toggleTheme} className='p-2 rounded-full'>
+            <button
+              onClick={toggleTheme}
+              className='p-2 rounded-full cursor-pointer'
+            >
               <img
                 src={isDark ? lightIcon : darkIcon}
                 alt='Toggle Theme Icon'

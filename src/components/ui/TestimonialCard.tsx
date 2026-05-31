@@ -13,7 +13,7 @@ const TestimonialCard = ({
   const stars = Array.from({ length: rating ?? 0 });
 
   return (
-    <div className='relative w-90.25 md:w-120 lg:w-148.5 my-9.5 group rounded-2xl'>
+    <div className='relative w-90.25 md:w-120 lg:w-148.5 my-9.5 group rounded-2xl cursor-pointer'>
       {/* Border Animasinya */}
       <div
         className='absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-spin-border'
@@ -33,7 +33,7 @@ const TestimonialCard = ({
 
         <div className='flex flex-col items-center justify-center pt-10 pb-16 px-6 gap-4 lg:pt-12 lg:px-8 lg:gap-6'>
           <div className='flex flex-col items-center justify-center gap-3'>
-            <div className='flex gap-1'>
+            <div className='flex gap-1 group-hover:scale-120 transition-transform duration-300'>
               {stars.map((_, index) => (
                 <img
                   key={index}

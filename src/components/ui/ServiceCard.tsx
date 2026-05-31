@@ -4,7 +4,7 @@ const ServiceCard = ({ title, description, icon }: ServiceCardProps) => {
   return (
     <div
       className={
-        'rounded-2xl border border-neutral-900 flex flex-col pt-12 pb-5 px-5 gap-4 lg:pt-16 cursor-pointer transition-all duration-200 ease-in-out relative'
+        'h-full rounded-2xl border border-neutral-900 flex flex-col pt-12 pb-5 px-5 gap-4 lg:pt-16 cursor-pointer transition-all duration-500 ease-in-out relative hover:border-primary-300/80 hover:scale-103'
       }
     >
       <img

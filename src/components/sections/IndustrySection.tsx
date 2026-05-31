@@ -28,7 +28,7 @@ export default function IndustrySection() {
                 key={indust.id}
                 onClick={() => setActiveId(indust.id)}
                 className={[
-                  'flex items-center gap-1.5 md:gap-2 text-size-md -tracking-1 md:text-size-lg lg:text-size-xl text-left transition-all duration-200 cursor-pointer',
+                  'flex items-center gap-1.5 md:gap-2 text-size-md -tracking-1 md:text-size-lg lg:text-size-xl text-left transition-all duration-300 cursor-pointer',
                   isActive
                     ? 'dark:text-neutral-25 font-semibold'
                     : 'text-neutral-600 font-normal hover:text-neutral-400',
@@ -36,11 +36,11 @@ export default function IndustrySection() {
               >
                 <span
                   className={[
-                    'w-1 h-6 md:h-8 rounded-full transition-all duration-200 shrink-0',
+                    'w-1 h-6 md:h-8 rounded-full transition-all duration-300 shrink-0',
                     isActive ? 'bg-primary-200' : 'bg-neutral-600',
                   ].join(' ')}
                 />
-                <span className='text-size-md md:text-size-xl'>
+                <span className='font-bold text-size-md md:text-size-xl'>
                   {indust.label}
                 </span>
               </button>
