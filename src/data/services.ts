@@ -1,13 +1,13 @@
 import type { ServiceCardData } from '../types';
-import WebDevIcon from '../assets/icons/Web-Development.png';
-import MobileIcon from '../assets/icons/Mobile-App Development.png';
-import UiUxIcon from '../assets/icons/UI-UX Design.png';
-import CloudIcon from '../assets/icons/Cloud-Solutions.png';
-import SoftwareDevIcon from '../assets/icons/Software-Development.png';
-import ItInfrastructureIcon from '../assets/icons/IT-Infrastructure.png';
-import CyberIcon from '../assets/icons/Cybersecurity-Services.png';
-import QaIcon from '../assets/icons/QA-Solutions.png';
-import ItConsultIcon from '../assets/icons/IT-Consulting-&-Support.png';
+import WebDevIcon from '../assets/icons/web-development.png';
+import MobileIcon from '../assets/icons/mobile-app-development.png';
+import UiUxIcon from '../assets/icons/ui-ux-design.png';
+import CloudIcon from '../assets/icons/cloud-solutions.png';
+import SoftwareDevIcon from '../assets/icons/software-development.png';
+import ItInfrastructureIcon from '../assets/icons/it-infrastructure.png';
+import CyberIcon from '../assets/icons/cybersecurity-services.png';
+import QaIcon from '../assets/icons/qa-solutions.png';
+import ItConsultIcon from '../assets/icons/it-consulting-support.png';
 
 export const services: ServiceCardData = {
   title: 'Smart IT Solutions That Grow With You',

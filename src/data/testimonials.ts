@@ -1,7 +1,7 @@
 import type { TestimonialData } from '../types';
-import JohnLeeImage from '../assets/images/John Lee.png';
-import SarahTanImage from '../assets/images/Sarah Tan.png';
-import EmilyChenImage from '../assets/images/Emily Chen.png';
+import JohnLeeImage from '../assets/images/john-lee.png';
+import SarahTanImage from '../assets/images/sarah-tan.png';
+import EmilyChenImage from '../assets/images/emily-chen.png';
 
 export const testimonials: TestimonialData = {
   title: 'What Partners Say About Working With Us',
