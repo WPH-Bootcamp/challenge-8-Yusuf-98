@@ -301,9 +301,9 @@ Berdasarkan design Figma, buat sections berikut (sesuaikan dengan design yang di
 **Format Submission:**
 
 ```
-Nama: [Nama lengkap kamu]
-Repository: [GitHub repository URL]
-Deployment: [Live website URL]
+Nama: Yusuf AR
+Repository: https://github.com/Yusuf-98/Company-Profile-by-Yusuf-AR
+Deployment: https://company-profile-by-yusuf-ar.vercel.app/
 Notes: [Catatan tambahan jika ada - challenges, learning points, etc.]
 ```
 
